@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position}`" x-data>
+        <div>
+            <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText"></a>
+        </div>
+        <button id="accept-cookie" class="accept-cookie" x-text="$store.buttonText"></button>
+    </div>
     <div class="container" style="margin-bottom: 100px">
         <div class="card mt-3">
             <div class="card-body">
@@ -77,10 +83,10 @@
                                 <label class="custom-control-label" for="tooltip-bottom-right">Top</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="tooltip-top-left" name="bar-position"
+                                <input type="radio" id="tooltip-pushdown-top" name="bar-position"
                                 @change="$store.position = 'pushdown-top'"
                                     class="custom-control-input">
-                                <label class="custom-control-label" for="tooltip-top-left">Pushdown top</label>
+                                <label class="custom-control-label" for="tooltip-pushdown-top">Pushdown top</label>
                             </div>
                         </div>
                     </template>
@@ -195,14 +201,6 @@
                 <!-- End custom text -->
             </div>
         </div>
-    </div>
-
-
-    <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position}`" x-data>
-        <div>
-            <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText"></a>
-        </div>
-        <button id="accept-cookie" class="accept-cookie" x-text="$store.buttonText"></button>
     </div>
 
     <script src="./js/script.js"></script>
