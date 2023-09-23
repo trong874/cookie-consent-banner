@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo chấp thuận cookie</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <div class="container" style="margin-bottom: 100px">
+        <div class="card mt-3">
+            <div class="card-body">
+
+                <!-- Position -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Position</h4>
+                </div>
+                <h5>Choose the display style of the cookie consent banner.</h5>
+                <div class="mb-3" x-data>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="display-style-tooltip" name="display-style" class="custom-control-input"
+                            @change="$store.consentStyle = 'consent-tooltip'" checked>
+                        <label class="custom-control-label" for="display-style-tooltip">Tooltip</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="display-style-bar" name="display-style" class="custom-control-input"
+                            @change="$store.consentStyle = 'consent-bar'">
+                        <label class="custom-control-label" for="display-style-bar">Bar</label>
+                    </div>
+
+                    <h5 class="my-3">Choose where you would like to display it.</h5>
+
+                    <template x-if="$store.consentStyle === 'consent-tooltip'">
+                        <div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-bottom-left" name="tooltip-position"
+                                @change="$store.position = 'bottom-left'"
+                                    class="custom-control-input" checked>
+                                <label class="custom-control-label" for="tooltip-bottom-left">Bottom left</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-bottom-right" name="tooltip-position"
+                                @change="$store.position = 'bottom-right'"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="tooltip-bottom-right">Bottom right</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-top-left" name="tooltip-position"
+                                @change="$store.position = 'top-left'"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="tooltip-top-left">Top left</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-top-right" name="tooltip-position"
+                                @change="$store.position = 'top-right'"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="tooltip-top-right">Top right</label>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-if="$store.consentStyle === 'consent-bar'">
+                        <div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-bottom-left" name="bar-position"
+                                @change="$store.position = 'bottom'"
+                                    class="custom-control-input" checked>
+                                <label class="custom-control-label" for="tooltip-bottom-left">Bottom</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-bottom-right" name="bar-position"
+                                @change="$store.position = 'top'"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="tooltip-bottom-right">Top</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tooltip-top-left" name="bar-position"
+                                @change="$store.position = 'pushdown-top'"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="tooltip-top-left">Pushdown top</label>
+                            </div>
+                        </div>
+                    </template>
+
+
+                </div>
+                <!-- End position -->
+
+                <!-- Layout -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Layout</h4>
+                </div>
+                <div class="form-group">
+                    <label>Border</label>
+                    <select class="form-control">
+                        <option value="none">None</option>
+                        <option value="thin">Thin</option>
+                        <option value="normal">Normal</option>
+                        <option value="thick">Thick</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Corners</label>
+                    <select class="form-control">
+                        <option value="none">None</option>
+                        <option value="small">Small</option>
+                        <option value="normal">Normal</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Padding</label>
+                    <select class="form-control">
+                        <option value="none">None</option>
+                        <option value="small">Small</option>
+                        <option value="normal">Normal</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Margin</label>
+                    <select class="form-control">
+                        <option value="none">None</option>
+                        <option value="small">Small</option>
+                        <option value="normal">Normal</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Transparency</label>
+                    <select class="form-control">
+                        <option value="5">5%</option>
+                        <option value="10">10%</option>
+                        <option value="15">15%</option>
+                        <option value="20">20%</option>
+                        <option value="25">25%</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Font Size</label>
+                    <select class="form-control">
+                        <option value="tiny">Tiny</option>
+                        <option value="small">Small</option>
+                        <option value="default">Default</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <!-- End Layout -->
+
+                <!-- Color -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Color</h4>
+                </div>
+                <!-- End Color -->
+
+                <!-- Cookie policy -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Color</h4>
+                </div>
+                <h5>URL to your cookie policy</h5>
+                <div class="form-group" x-data>
+                    <input type="text" x-model="$store.urlCookiePolicy" class="form-control" placeholder="https://www.yoursite.com/cookie-policy/">
+                </div>
+                <!-- End Cookie policy -->
+
+                <!-- Custom text -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Custom text</h4>
+                </div>
+
+                <div class="form-group" x-data>
+                    <label>Main message</label>
+                    <textarea class="form-control" x-model="$store.mainMessage" placeholder="This website uses cookies to ensure you get the best experience on our website."></textarea>
+                </div>
+
+                <div class="row" x-data>
+                    <div class="form-group col-lg-6">
+                        <label>Policy link text</label>
+                        <input class="form-control" placeholder="Learn more" x-model="$store.linkText">
+                    </div>
+    
+                    <div class="form-group col-lg-6" x-data>
+                        <label>Dismiss button text</label>
+                        <input class="form-control" placeholder="Got it!" x-model="$store.buttonText">
+                    </div>
+                </div>
+                <!-- End custom text -->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position}`" x-data>
+        <div>
+            <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText"></a>
+        </div>
+        <button id="accept-cookie" class="accept-cookie" x-text="$store.buttonText"></button>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
