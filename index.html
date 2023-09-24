@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position}`" x-data>
+    <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position} ${$store.consentMargin} ${$store.consentPadding} ${$store.consentCorner} ${$store.consentBorder} ${$store.consentTransparency} ${$store.consentFontsize} ${$store.consentColor}`" x-data>
         <div>
             <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText"></a>
         </div>
@@ -44,26 +44,22 @@
                         <div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-bottom-left" name="tooltip-position"
-                                @change="$store.position = 'bottom-left'"
-                                    class="custom-control-input" checked>
+                                    @change="$store.position = 'bottom-left'" class="custom-control-input" checked>
                                 <label class="custom-control-label" for="tooltip-bottom-left">Bottom left</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-bottom-right" name="tooltip-position"
-                                @change="$store.position = 'bottom-right'"
-                                    class="custom-control-input">
+                                    @change="$store.position = 'bottom-right'" class="custom-control-input">
                                 <label class="custom-control-label" for="tooltip-bottom-right">Bottom right</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-top-left" name="tooltip-position"
-                                @change="$store.position = 'top-left'"
-                                    class="custom-control-input">
+                                    @change="$store.position = 'top-left'" class="custom-control-input">
                                 <label class="custom-control-label" for="tooltip-top-left">Top left</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-top-right" name="tooltip-position"
-                                @change="$store.position = 'top-right'"
-                                    class="custom-control-input">
+                                    @change="$store.position = 'top-right'" class="custom-control-input">
                                 <label class="custom-control-label" for="tooltip-top-right">Top right</label>
                             </div>
                         </div>
@@ -72,20 +68,17 @@
                         <div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-bottom-left" name="bar-position"
-                                @change="$store.position = 'bottom'"
-                                    class="custom-control-input" checked>
+                                    @change="$store.position = 'bottom'" class="custom-control-input" checked>
                                 <label class="custom-control-label" for="tooltip-bottom-left">Bottom</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-bottom-right" name="bar-position"
-                                @change="$store.position = 'top'"
-                                    class="custom-control-input">
+                                    @change="$store.position = 'top'" class="custom-control-input">
                                 <label class="custom-control-label" for="tooltip-bottom-right">Top</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="tooltip-pushdown-top" name="bar-position"
-                                @change="$store.position = 'pushdown-top'"
-                                    class="custom-control-input">
+                                    @change="$store.position = 'pushdown-top'" class="custom-control-input">
                                 <label class="custom-control-label" for="tooltip-pushdown-top">Pushdown top</label>
                             </div>
                         </div>
@@ -99,64 +92,64 @@
                 <div class="alert alert-info" role="alert">
                     <h4>Layout</h4>
                 </div>
-                <div class="form-group">
+                <div class="form-group" x-data>
                     <label>Border</label>
-                    <select class="form-control">
-                        <option value="none">None</option>
-                        <option value="thin">Thin</option>
-                        <option value="normal">Normal</option>
-                        <option value="thick">Thick</option>
+                    <select class="form-control" x-model="$store.consentBorder">
+                        <option value="border-none">None</option>
+                        <option value="border-thin">Thin</option>
+                        <option value="border-normal">Normal</option>
+                        <option value="border-thick">Thick</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-data>
                     <label>Corners</label>
-                    <select class="form-control">
-                        <option value="none">None</option>
-                        <option value="small">Small</option>
-                        <option value="normal">Normal</option>
-                        <option value="large">Large</option>
+                    <select class="form-control" x-model="$store.consentCorner">
+                        <option value="corner-none">None</option>
+                        <option value="corner-small">Small</option>
+                        <option value="corner-normal">Normal</option>
+                        <option value="corner-large">Large</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-data>
                     <label>Padding</label>
-                    <select class="form-control">
-                        <option value="none">None</option>
-                        <option value="small">Small</option>
-                        <option value="normal">Normal</option>
-                        <option value="large">Large</option>
+                    <select class="form-control" x-model="$store.consentPadding">
+                        <option value="padding-none">None</option>
+                        <option value="padding-small">Small</option>
+                        <option value="padding-normal">Normal</option>
+                        <option value="padding-large">Large</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-model="$store.consentMargin" x-data>
                     <label>Margin</label>
                     <select class="form-control">
-                        <option value="none">None</option>
-                        <option value="small">Small</option>
-                        <option value="normal">Normal</option>
-                        <option value="large">Large</option>
+                        <option value="margin-none">None</option>
+                        <option value="margin-small">Small</option>
+                        <option value="margin-normal">Normal</option>
+                        <option value="margin-large">Large</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-data>
                     <label>Transparency</label>
-                    <select class="form-control">
-                        <option value="5">5%</option>
-                        <option value="10">10%</option>
-                        <option value="15">15%</option>
-                        <option value="20">20%</option>
-                        <option value="25">25%</option>
+                    <select class="form-control" x-model="$store.consentTransparency">
+                        <option value="transparency-5">5%</option>
+                        <option value="transparency-10">10%</option>
+                        <option value="transparency-15">15%</option>
+                        <option value="transparency-20">20%</option>
+                        <option value="transparency-25">25%</option>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-data>
                     <label>Font Size</label>
-                    <select class="form-control">
-                        <option value="tiny">Tiny</option>
-                        <option value="small">Small</option>
-                        <option value="default">Default</option>
-                        <option value="large">Large</option>
+                    <select class="form-control" x-model="$store.consentFontsize">
+                        <option value="fontsize-tiny">Tiny</option>
+                        <option value="fontsize-small">Small</option>
+                        <option value="fontsize-default">Default</option>
+                        <option value="fontsize-large">Large</option>
                     </select>
                 </div>
                 <!-- End Layout -->
@@ -165,15 +158,146 @@
                 <div class="alert alert-info" role="alert">
                     <h4>Color</h4>
                 </div>
+                <div x-data>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-1" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-1">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-2" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-2">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-3" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-3">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-4" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-4">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-5" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-5">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-6" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-6">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-7" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-7">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="dark-8" hidden x-model="$store.consentColor">
+                        <div class="select-color-item dark-8">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-1" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-1">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-2" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-2">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-3" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-3">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-4" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-4">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-5" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-5">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-6" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-6">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-7" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-7">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                    <label class="label-consent-color">
+                        <input type="radio" name="consent-color" value="light-8" hidden x-model="$store.consentColor">
+                        <div class="select-color-item light-8">
+                            <div class="placeholder"></div>
+                            <div class="placeholder"></div>
+                            <div class="placeholder-button"></div>
+                        </div>
+                    </label>
+                </div>
                 <!-- End Color -->
 
                 <!-- Cookie policy -->
                 <div class="alert alert-info" role="alert">
-                    <h4>Color</h4>
+                    <h4>Cookie policy</h4>
                 </div>
                 <h5>URL to your cookie policy</h5>
                 <div class="form-group" x-data>
-                    <input type="text" x-model="$store.urlCookiePolicy" class="form-control" placeholder="https://www.yoursite.com/cookie-policy/">
+                    <input type="text" x-model="$store.urlCookiePolicy" class="form-control"
+                        placeholder="https://www.yoursite.com/cookie-policy/">
                 </div>
                 <!-- End Cookie policy -->
 
@@ -184,7 +308,8 @@
 
                 <div class="form-group" x-data>
                     <label>Main message</label>
-                    <textarea class="form-control" x-model="$store.mainMessage" placeholder="This website uses cookies to ensure you get the best experience on our website."></textarea>
+                    <textarea class="form-control" x-model="$store.mainMessage"
+                        placeholder="This website uses cookies to ensure you get the best experience on our website."></textarea>
                 </div>
 
                 <div class="row" x-data>
@@ -192,7 +317,7 @@
                         <label>Policy link text</label>
                         <input class="form-control" placeholder="Learn more" x-model="$store.linkText">
                     </div>
-    
+
                     <div class="form-group col-lg-6" x-data>
                         <label>Dismiss button text</label>
                         <input class="form-control" placeholder="Got it!" x-model="$store.buttonText">

@@ -1,30 +1,187 @@
+:root {
+    --text-color-dark: #FFF;
+    --text-color-light: #000;
+    --primary-1: #fde296;
+    --primary-2: #b5e1a0;
+    --primary-3: #b4eae4;
+    --primary-4: #b3d0e4;
+    --primary-5: #afb3e4;
+    --primary-6: #d9baea;
+    --primary-7: #e6b3b3;
+    --primary-8: #f9f9f9;
+    --primary-light-1: rgb(224, 188, 87);
+    --primary-light-2: rgb(127, 194, 94);
+    --primary-light-3: rgb(94, 194, 182);
+    --primary-light-4: rgb(94, 153, 194);
+    --primary-light-5: rgb(94, 153, 194);
+    --primary-light-6: rgb(94, 101, 194);
+    --primary-light-7: rgb(194, 94, 94);
+    --primary-light-8: rgb(85, 85, 85);
+    --bg-light-1: #fff0ca;
+    --bg-light-2: #e2f7d4;
+    --bg-light-3: #edfdfa;
+    --bg-light-4: #cff5ff;
+    --bg-light-5: #f0edff;
+    --bg-light-6: #ffe8ff;
+    --bg-light-7: #ffe4e1;
+    --bg-light-8: #f6f6f6;
+}
 .cookie-banner {
     position: fixed;
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
     text-align: center;
     font-size: 16px;
     z-index: 9999;
+    border-style: solid;
+    border-color: #999;
+
+}
+.cookie-banner.dark-1 {
+    background-color: #222;
+    border-color: var(--primary-1);
+    color: var(--text-color-dark);
+    --primary: var(--primary-1);
+}
+.cookie-banner.dark-2 {
+    background-color: #222;
+    border-color: var(--primary-2);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-2);
+}
+.cookie-banner.dark-3 {
+    background-color: #222;
+    border-color: var(--primary-3);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-3);
+}
+.cookie-banner.dark-4 {
+    background-color: #222;
+    border-color: var(--primary-4);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-4);
+}
+.cookie-banner.dark-5 {
+    background-color: #222;
+    border-color: var(--primary-5);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-5);
+}
+.cookie-banner.dark-6 {
+    background-color: #222;
+    border-color: var(--primary-6);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-6);
+}
+.cookie-banner.dark-7 {
+    background-color: #222;
+    border-color: var(--primary-7);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-7);
+}
+.cookie-banner.dark-8 {
+    background-color: #222;
+    border-color: var(--primary-8);
+    color: var(--text-color-dark);
+
+    --primary: var(--primary-8);
+}
+.cookie-banner.light-1 {
+    background-color: var(--bg-light-1);
+    border-color: var(--primary-light-1);
+    color: var(--text-color-light);
+    --primary: var(--primary-light-1);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-2 {
+    background-color: var(--bg-light-2);
+    border-color: var(--primary-light-2);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-2);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-3 {
+    background-color: var(--bg-light-3);
+    border-color: var(--primary-light-3);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-3);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-4 {
+    background-color: var(--bg-light-4);
+    border-color: var(--primary-light-4);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-4);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-5 {
+    background-color: var(--bg-light-5);
+    border-color: var(--primary-light-5);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-5);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-6 {
+    background-color: var(--bg-light-6);
+    border-color: var(--primary-light-6);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-6);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-7 {
+    background-color: var(--bg-light-7);
+    border-color: var(--primary-light-7);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-7);
+    --color-btn: var(--text-color-dark);
+}
+.cookie-banner.light-8 {
+    background-color: var(--bg-light-8);
+    border-color: var(--primary-light-8);
+    color: var(--text-color-light);
+
+    --primary: var(--primary-light-8);
+    --color-btn: var(--text-color-dark);
+}
+.accept-cookie {
+    background-color: var(--primary);
+    color: var(--color-btn,#333);
+    border: none;
+    padding: 4px 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    border-radius: 7px;
+    width: 100%;
 }
 .cookie-banner.consent-tooltip {
     max-width: 22em;
 }
 .cookie-banner.consent-tooltip.bottom-left {
-    bottom: 1em;
-    left: 1em;
+    bottom: 0;
+    left: 0;
 }
 .cookie-banner.consent-tooltip.bottom-right {
-    bottom: 1em;
-    right: 1em;
+    bottom: 0;
+    right: 0;
 }
 .cookie-banner.consent-tooltip.top-left {
-    top: 1em;
-    left: 1em;
+    top: 0;
+    left: 0;
 }
 .cookie-banner.consent-tooltip.top-right {
-    top: 1em;
-    right: 1em;
+    top: 0;
+    right: 0;
 }
 .cookie-banner.consent-bar {
     width: 100vw;
@@ -42,12 +199,219 @@
 .cookie-banner.consent-bar.pushdown-top {
     position: relative;
 }
-.accept-cookie {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.cookie-banner.margin-none {
+    margin: 0;
+}
+.cookie-banner.margin-small {
+    margin: .5em;
+}
+.cookie-banner.margin-normal {
+    margin: 1em;
+}
+.cookie-banner.margin-large {
+    margin: 1.5em;
+}
+
+.cookie-banner.padding-none {
+    padding: 0;
+}
+.cookie-banner.padding-small {
+    padding: .5em;
+}
+.cookie-banner.padding-normal {
+    padding: 1em;
+}
+.cookie-banner.padding-large {
+    padding: 1.5em;
+}
+
+.cookie-banner.corner-none {
+    border-radius: 0;
+}
+.cookie-banner.corner-small {
+    border-radius: 5px;
+}
+.cookie-banner.corner-normal {
+    border-radius: 7px;
+}
+.cookie-banner.corner-large {
+    border-radius: 10px;
+}
+
+.cookie-banner.border-none {
+    border-width: 0;
+}
+.cookie-banner.border-thin {
+    border-width: 1px;
+}
+.cookie-banner.border-normal {
+    border-width: 3px;
+}
+.cookie-banner.border-thick {
+    border-width: 5px;
+}
+
+.cookie-banner.transparency-0 {
+    opacity: 1;
+}
+.cookie-banner.transparency-5 {
+    opacity: .95;
+}
+.cookie-banner.transparency-10 {
+    opacity: .90;
+}
+.cookie-banner.transparency-15 {
+    opacity: .85;
+}
+.cookie-banner.transparency-20 {
+    opacity: .80;
+}
+.cookie-banner.transparency-25 {
+    opacity: .75;
+}
+
+.cookie-banner.fontsize-tiny {
+    font-size: 12px;
+}
+.cookie-banner.fontsize-small {
+    font-size: 14px;
+}
+.cookie-banner.fontsize-default {
     font-size: 16px;
-    margin-top: 10px;
+}
+.cookie-banner.fontsize-large {
+    font-size: 18px;
+}
+
+.select-color-item {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+input[name="consent-color"]:checked + .select-color-item {
+    border-color: #b05151;
+}
+.label-consent-color {
+    padding: 4px;
+}
+.label-consent-color:not(:last-child) {
+    margin-right: 8px;
+}
+
+.select-color-item {
+    padding: 4px;
+    display: flex;
+
+}
+
+.select-color-item.dark-1 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-1)
+}
+.select-color-item.dark-2 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-2)
+}
+.select-color-item.dark-3 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-3)
+}
+.select-color-item.dark-4 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-4)
+}
+.select-color-item.dark-5 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-5)
+}
+.select-color-item.dark-6 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-6)
+}
+.select-color-item.dark-7 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-7)
+}
+.select-color-item.dark-8 {
+    background-color: #222;
+    flex-direction: column;
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-8)
+}
+.select-color-item.light-1 {
+    background-color: var(--bg-light-1);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-1);
+}
+.select-color-item.light-2 {
+    background-color: var(--bg-light-2);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-2);
+}
+.select-color-item.light-3 {
+    background-color: var(--bg-light-3);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-3);
+}
+.select-color-item.light-4 {
+    background-color: var(--bg-light-4);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-4);
+}
+.select-color-item.light-5 {
+    background-color: var(--bg-light-5);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-5);
+}
+.select-color-item.light-6 {
+    background-color: var(--bg-light-6);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-6);
+}
+.select-color-item.light-7 {
+    background-color: var(--bg-light-7);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: var(--primary-7);
+}
+.select-color-item.light-8 {
+    background-color: var(--bg-light-8);
+    flex-direction: column;
+    --text-color: var(--text-color-light);
+    --primary-color: #555555;
+}
+.placeholder {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 4px;
+    background-color: var(--text-color);
+}
+.placeholder-button {
+    margin-top: auto;
+    width: 100%;
+    height: 8px;
+    margin-bottom: 4px;
+    background-color: var(--primary-color);
 }

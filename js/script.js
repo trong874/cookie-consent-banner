@@ -21,4 +21,11 @@ document.addEventListener('alpine:init', () => {
     Alpine.store('linkText', 'Learn More');
     Alpine.store('urlCookiePolicy', 'https://www.yoursite.com/cookie-policy/');
     Alpine.store('buttonText', 'Got it!');
+    Alpine.store('consentMargin', 'margin-samll');
+    Alpine.store('consentPadding', 'padding-small');
+    Alpine.store('consentCorner', 'corner-small');
+    Alpine.store('consentBorder', 'border-thin');
+    Alpine.store('consentTransparency', 'transparency-0');
+    Alpine.store('consentFontsize', 'fontsize-default');
+    Alpine.store('consentColor', 'dark-1');
 })
