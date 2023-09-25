@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông báo chấp thuận cookie</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
     <div id="cookie-banner" :class="`cookie-banner ${$store.consentStyle} ${$store.position} ${$store.consentMargin} ${$store.consentPadding} ${$store.consentCorner} ${$store.consentBorder} ${$store.consentTransparency} ${$store.consentFontsize} ${$store.consentColor}`" x-data>
         <div>
-            <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText"></a>
+            <span x-text="$store.mainMessage"></span> <a :href="$store.urlCookiePolicy" x-text="$store.linkText" class="urlPolicy"></a>
         </div>
         <button id="accept-cookie" class="accept-cookie" x-text="$store.buttonText"></button>
     </div>
@@ -135,6 +135,7 @@
                 <div class="form-group" x-data>
                     <label>Transparency</label>
                     <select class="form-control" x-model="$store.consentTransparency">
+                        <option value="transparency-0">0%</option>
                         <option value="transparency-5">5%</option>
                         <option value="transparency-10">10%</option>
                         <option value="transparency-15">15%</option>
@@ -324,6 +325,19 @@
                     </div>
                 </div>
                 <!-- End custom text -->
+
+                <!-- Copy the code -->
+                <div class="alert alert-info" role="alert">
+                    <h4>Copy the code</h4>
+                </div>
+                <h5>Copy the code below to the HTML header section of your website, just above the &lt;/head&gt; tag.</h5>
+                <div x-data>
+                    <div class="form-group">
+                        <label>Policy link text</label>
+                        <textarea class="form-control" x-ref="code" x-model="$store.code" rows="20" readonly></textarea>
+                    </div>
+                    <button class="btn btn-primary" @click="navigator.clipboard.writeText($refs.code.value); alert('Copied !');">Copy code</button>
+                </div>
             </div>
         </div>
     </div>

@@ -27,19 +27,30 @@
     --bg-light-8: #f6f6f6;
 }
 .cookie-banner {
+    box-sizing: border-box;
     position: fixed;
     text-align: center;
     font-size: 16px;
     z-index: 9999;
     border-style: solid;
     border-color: #999;
-
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 400;
+    line-height: 1.5;
 }
 .cookie-banner.dark-1 {
     background-color: #222;
     border-color: var(--primary-1);
     color: var(--text-color-dark);
     --primary: var(--primary-1);
+}
+.urlPolicy {
+    color: inherit;
+    opacity: .85;
+}
+.urlPolicy:hover {
+    color: inherit;
+    opacity: 1;
 }
 .cookie-banner.dark-2 {
     background-color: #222;
@@ -163,6 +174,9 @@
     font-weight: 600;
     border-radius: 7px;
     width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 .cookie-banner.consent-tooltip {
     max-width: 22em;
@@ -184,7 +198,14 @@
     right: 0;
 }
 .cookie-banner.consent-bar {
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cookie-banner.consent-bar .accept-cookie {
+    width: auto;
+    margin: 0;
 }
 .cookie-banner.consent-bar.bottom {
     left: 0;
